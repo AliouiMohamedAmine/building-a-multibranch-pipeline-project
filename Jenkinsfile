@@ -1,9 +1,7 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:16' // Use the official Node.js Docker image
-            args '-u root' // Run as root to avoid permission issues
-        }
+    agent any
+    environment {
+        CI = 'true'
     }
     stages {
         stage('Build') {
